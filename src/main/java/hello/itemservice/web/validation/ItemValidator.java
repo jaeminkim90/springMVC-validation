@@ -20,12 +20,12 @@ public class ItemValidator implements Validator {
 
         // 상품 이름 누럭 검증 로직
         if (!StringUtils.hasText(item.getItemName())) {
-            errors.rejectValue("itemName","required");
+            errors.rejectValue("itemName", "required");
         }
 
         // 가격 범위 검증 로직
         if (item.getPrice() == null || item.getPrice() < 1000 || item.getPrice() > 1000000) {
-            errors.rejectValue("price","range", new Object[]{1000,1000000},null);
+            errors.rejectValue("price", "range", new Object[]{1000, 1000000}, null);
         }
 
         // 수량 범위 검증 로직
